@@ -1,28 +1,34 @@
-import java.util.*;
-
 public class tictactoe {
 
   public static void main(String []args) {
+        String playerMove;
+
+        //set up Scanner for player inputs
+        Scanner scnr = new Scanner(System.in);
+
+        //welcome messages
         System.out.println("Welcome to Tic-Tac-Toe!");
-        System.out.println("");
 
-        // print grid
-        System.out.println("   |   |   ");
-        System.out.println("---|---|---");
-        System.out.println("   |   |   ");
-        System.out.println("---|---|---");
-        System.out.println("   |   |   ");
+        // initiaize 2d int array to keep track of input
+        int[][] gameBoard = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+          for (int j = 0; j < 3; j++) {
+            gameBoard[i][j] = 0;
+          }
+        }
 
-        System.out.println("");
-        System.out.println("");
-        System.out.println("Here are the spaces you can fill in!");
+        // initialize 2d char array to print out input
+        char[][] printGameboard = new char[3][3];
+        for (int i = 0; i < 3; i++) {
+          for (int j = 0; j < 3; j++) {
+            printGameboard[i][j] = '-';
+          }
+        }
 
-        // denotes what space is which
-        System.out.println("A1  B1  C1");
-        System.out.println("A2  B2  C2");
-        System.out.println("A3  B3  C3");
-
-        System.out.println("Enter your first move:");
+        System.out.println("Here are the spaces you can fill in:");
+        showBoard();
+        System.out.println("Please enter your move:");  
+        String playerMove = scnr.nextLine(); 
 
       }
 }
